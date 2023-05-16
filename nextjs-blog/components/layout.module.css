@@ -1,15 +1,115 @@
 .container {
-    max-width: 36rem;
-    padding: 0 1rem;
-    margin: 3rem auto 6rem;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    gap:0px;
+    align-items:flex-start;
+    justify-content: flex-start;
   }
+  
+  .sectionContainer {
+    display: flex;
+    align-items: center;
+    padding: 40px 0px;
+    margin:0px auto ;
+    gap: 80px;
+    position: relative;
+    width: 600px;
+    border-bottom: 1px solid var(--grayLighter);
+  }
+  
   
   .header {
     display: flex;
     flex-direction: column;
     align-items: center;
   }
+
+/* HEADER CONTENT */
   
-  .backToHome {
-    margin: 3rem 0 0;
-  }
+.headerContainer {
+    /* Auto layout */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 40px;
+    gap: 10px;    
+
+    position: relative;
+    width: 100vw;
+    height: 100px;
+
+    background: #FFFFFF;
+    box-shadow: 0px 2px 2px var(--grayLighter);
+
+    justify-content: space-between;
+}
+
+.headerLink {
+  color: var(--grayDarker); 
+  font-weight: 500;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 16px 32px;
+  background-image:  url(/images/Cover.svg), url(/images/hover-underline.svg); /*written underline with white cover to animate */
+  background-origin: content-box, content-box;
+  background-position-x: right, right;
+  background-position-y: 20px, 20px;
+  background-size: 100% auto, contain;
+  background-repeat: no-repeat, no-repeat;
+  transition: background-size 0.15s;
+}
+
+.headerLink:hover {
+  background-size: 0%, contain;
+}
+
+.headerButton {
+  color: var(--grayDarker); 
+  font-weight: 500;
+  padding: 18.5px 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: url(/images/button-outline.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin: 32px 32px;
+  cursor: pointer;
+}
+
+.headerButton:hover {
+  background-image: url(/images/button-outline-hover.svg);
+}
+
+/* HERO CONTENT */
+
+.heroTextContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 0px;
+  
+  width: auto;
+  height: 201px;
+}
+
+/* FOOTER CONTENT */
+
+.footerContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  gap: 16px;    
+
+  position: relative;
+  width: 100vw;
+  background: var(--grayDarker);
+  margin-top: auto;
+}
