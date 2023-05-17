@@ -7,7 +7,7 @@ import Link from 'next/link';
 const name = 'Charlie';
 export const siteTitle = 'Charlie Mouton';
 
-function Metadata() {
+export function Metadata() {
   return (
     <>
       <link rel="icon" href="/favicon.ico" /> {/*TODO: Add favicon */}
@@ -23,29 +23,31 @@ function Metadata() {
 };
 
 
-function Header() {
+export function Header() {
   return (
     <>
       <div className={styles.headerContainer}>
-        <Image
-          priority
-          src="/images/header-logo.svg"
-          height={40}
-          width={237}
-          alt="" />
-
-        <div className={styles.headerLink}> <Link href={"/"} >Growth </Link></div>
-        <div className={styles.headerLink}> <Link href={"/"} >Order </Link></div>
+        <Link href="/">
+          <Image
+            priority
+            src="/images/header-logo.svg"
+            height={40}
+            width={237}
+            alt="" 
+          />
+        </Link>
+        <div className={styles.headerLink}> <Link href={"/values/growth"} >Growth </Link></div>
+        <div className={styles.headerLink}> <Link href={"/values/order"} >Order </Link></div>
         <Link href={"/"} className={styles.headerButton}>My Resume</Link>
       </div>
     </>
   )
 };
 
-function Hero() {
+export function Hero() {
   return (
     <>
-      <div className={styles.sectionContainer}>
+      <div className={styles.heroContainer}>
         <Image
           priority
           src="/images/hi-graphic.svg"
@@ -55,7 +57,7 @@ function Hero() {
         <div className={styles.heroTextContainer}>
           <h1>Nice to meet you</h1>
           <Paragraph textSize="bodyLarge" Content="
-            I’m excited to share a bit about myself through this personal portfolio. You can read a bit more about me below or use the ‘Values’ links in the header to read a bit more about my management style.
+            I’m excited to share a bit about myself through this personal portfolio. You can find my personal statement below or use the ‘Values’ links in the header to read a bit more about my management style.
             "></Paragraph>
         </div>
       </div>
@@ -63,7 +65,7 @@ function Hero() {
   )
 };
 
-function PersonalStatement() {
+export function PersonalStatement() {
   return (
     <div className={styles.sectionContainer} style={{ 'border-bottom': 'none' }}>
       <Paragraph textSize="bodyNormal" Content="
@@ -72,7 +74,7 @@ function PersonalStatement() {
   )
 }
 
-function Footer() {
+export function Footer() {
   return (
       <div className={styles.footerContainer} >
           <div style={{ 
@@ -87,7 +89,7 @@ function Footer() {
     )
   }
 
-function Paragraph({Content, textSize}) {
+  export function Paragraph({Content, textSize}) {
   return (
     <>
       <div className={styles.paragraphContainer}>
@@ -98,6 +100,17 @@ function Paragraph({Content, textSize}) {
     </>
   )
 };
+
+export function Subtitle({Content, Graphic}) {
+  return (
+    <div>
+      <h2 className={styles.subtitle + ' ' + styles[Graphic]}>
+        {Content}
+      </h2>
+    </div>
+  )
+};
+
 
 
 export default function Layout({ children, home }) {
