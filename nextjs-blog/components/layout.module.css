@@ -8,17 +8,6 @@
     background-color: white;
     max-width:1800px
   }
-
-  .heroContainer {
-    display: flex;
-    align-items: center;
-    padding: 40px 0px;
-    margin:0px auto ;
-    gap: 80px;
-    position: relative;
-    width: 600px;
-    border-bottom: 1px solid var(--grayLighter);
-  }
   
   .sectionContainer {
     display: flex;
@@ -138,6 +127,16 @@
 }
 
 /* HERO CONTENT */
+.heroContainer {
+  display: flex;
+  align-items: center;
+  padding: 40px 0px;
+  margin:0px auto ;
+  gap: 64px;
+  position: relative;
+  width: 600px;
+  border-bottom: 1px solid var(--grayLighter);
+}
 
 .heroTextContainer {
   display: flex;

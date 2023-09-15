@@ -10,7 +10,9 @@ export const siteTitle = 'Charlie Mouton';
 export function Metadata() {
   return (
     <>
-      <link rel="icon" href="/favicon.ico" /> {/*TODO: Add favicon */}
+      <Head>
+      <link rel="icon" href="images/favicon.ico?v=2" type="image/x-icon"/>
+      </Head>
       <meta
         name="description"
         content="Learn how to build a personal website using Next.js" // TODO: Update with a brief description
@@ -44,7 +46,7 @@ export function Header() {
   )
 };
 
-export function Hero() {
+function LandingHero() {
   return (
     <>
       <div className={styles.heroContainer}>
@@ -65,9 +67,51 @@ export function Hero() {
   )
 };
 
+export function GrowthHero() {
+  return (
+    <>
+      <div className={styles.heroContainer}>
+        <Image
+          priority
+          src="/images/growth-graphic.svg"
+          height={138}
+          width={80}
+          alt="" />
+        <div className={styles.heroTextContainer}>
+          <h2>Finding Joy in Growth</h2>
+          <Paragraph textSize="bodyNormal" Content="
+            Nothing gets me more energized and motivated quite like an opportunity to challenge myself or a peer to grow. I think development is one of the most satisfying experiences of human existence, and I relish being able to leverage that in my professional life.
+            "></Paragraph>
+        </div>
+      </div>
+    </>
+  )
+};
+
+// export function OrderHero() {
+//   return (
+//     <>
+//       <div className={styles.heroContainer}>
+//         <Image
+//           priority
+//           src="/images/hi-graphic.svg"
+//           height={100}
+//           width={66}
+//           alt="" />
+//         <div className={styles.heroTextContainer}>
+//           <h1>Nice to meet you</h1>
+//           <Paragraph textSize="bodyLarge" Content="
+//             I’m excited to share a bit about myself through this personal portfolio. You can find my personal statement below or use the ‘Values’ links in the header to read a bit more about my management style.
+//             "></Paragraph>
+//         </div>
+//       </div>
+//     </>
+//   )
+// };
+
 export function PersonalStatement() {
   return (
-    <div className={styles.sectionContainer} style={{ 'border-bottom': 'none' }}>
+    <div className={styles.sectionContainer} style={{'border-bottom': 'none' }}>
       <Paragraph textSize="bodyNormal" Content="
         I am a detail-oriented, compassionate manager that geeks out on enhancing processes to improve the quality of work and life for my team. I am thrilled to work directly with contributors to unlock potential, reduce stress, and discover satisfaction and meaning in the day to day. I am currently seeking an opportunity to work with a team of driven, fun folks to create digital experiences that empower users to do what they want and need with less effort and frustration along the way."></Paragraph>
     </div>
@@ -118,7 +162,7 @@ export default function Layout({ children, home }) {
     <div className={styles.container}>
       <Metadata />
       <Header />
-      <Hero />
+      <LandingHero />
       <PersonalStatement />
       <Footer />
     </div>
